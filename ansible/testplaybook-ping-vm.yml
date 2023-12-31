@@ -4,8 +4,10 @@
     - name: ping hosts
       ansible.windows.win_ping:
 
-    - name: run python d:\get_vm.py
-      ansible.windows.win_command: python d:\get_vm.py
+    - name: run python D:\get_vm.py
+      ansible.windows.win_command:
+        cmd: '"D:\get_vm.py"'
+        chdir: D:\
       register: result
     
     - name: show result

@@ -1,0 +1,13 @@
+- name: ping hosts
+  hosts: all
+  tasks:
+    - name: ping hosts
+      ansible.windows.win_ping:
+
+    - name: run python d:\get_vm.py
+      ansible.windows.win_command: python d:\get_vm.py
+      register: result
+    
+    - name: show result
+      debug:
+        msg: "{{ result }}"
